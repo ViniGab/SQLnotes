@@ -1,3 +1,22 @@
 SQL: 
 
-Teste final anotações. 
+- Porta padrão do mysql: 3306
+
+- 165.112.111.11:3306 ip ficcticio + porta para acessar o local do BD.
+
+- C: Create = INSERIR DADOS.
+- R: Read = PEGAR DADOS
+- U: Update = Atualizar = MODIFICAR DADOS EXISTENTES
+- D: Delete = Excluir = REMOVER DADOS EXISTENTES
+
+CRUD
+
+_______________________________________________________________________________________________________________________________________________
+
+HeidiSQL serve como client para vizualização. 
+
+Baixamos o XAMPP para gerenciar o Mysql/apache e etc. 
+
+Ativamos o Apache e o Mysql no XAMPP para acessar o http://localhost/phpmyadmin/index.php.
+
+Para ter a opção de apagar os valores da tabela nós devemos ativar o A.I no "muda".
