@@ -20,3 +20,41 @@ Baixamos o XAMPP para gerenciar o Mysql/apache e etc.
 Ativamos o Apache e o Mysql no XAMPP para acessar o http://localhost/phpmyadmin/index.php.
 
 Para ter a opção de apagar os valores da tabela nós devemos ativar o A.I no "muda".
+_______________________________________________________________________________________________________________________________________________
+
+Cada coluna tem algumas informações sobre ela:
+
+- Nome da coluna.
+- Tipo da coluna.
+- Tamanho da coluna.
+- Se a coluna aceita NULL (Para campos onde não são obrigatórios ou não são todas pessoas que tem).
+- Valor padrão.
+_______________________________________________________________________________________________________________________________________________
+
+Tipos de dados mais comuns na coluna:
+
+- TINYINT / INT
+- FLOAT
+- VARCHAR / TEXT
+- DATE / TIME / DATETIME / TIMESTAMP
+_______________________________________________________________________________________________________________________________________________
+
+Comandos básicos. Os nomes utilizados(produtos, preco, valores e etc) são com base em um banco utilizado no HeidiSQL).
+
+SELECT * FROM produtos; // Seleciona tudo na tabela produtos.
+SELECT nome FROM produtos; // Seleciona apenas o nome de produtos.
+SELECT nome, preco FROM produtos;  // Seleciona nome e preco de produtos.
+SELECT * FROM produtos WHERE id_fornecedor = 6; // Apenas os produtos onde o id_fornecedor é = 6.
+SELECT * FROM usuarios WHERE nome = 'Pedro';  // Procura Pedro na tabela nome, textos devem ter aspas. 
+SELECT * FROM tabela WHERE id IN (2,3,4);  // Para procurar mais de um.
+SELECT * FROM tabela WHERE id = 2 OR id = 3;  // Usando o OR. 
+SELECT * FROM produtos WHERE preco > 150;  // Maior que...
+SELECT * FROM produtos WHERE preco != 200;  // Todos os preços diferentes de 200. 
+SELECT * FROM produtos WHERE preco = 200 AND preco = 140; // Todos os preços com 200 e 140. 
+SELECT * FROM produtos WHERE (preco > 140 AND preco < 1000) OR id = 3; // Utilizar () para organizar o solicitado, prioridade na operação.
+SELECT * FROM usuarios WHERE nome LIKE 'bonieky%';  // Para procurar nomes que iniciam com 'bonieky'.
+SELECT * FROM usuarios WHERE nome LIKE '%lacerda';  // Para procurar nomes que terminam com 'lacerda'.
+SELECT * FROM usuarios WHERE nome LIKE '%lacerda%';  // Para procurar nomes em qualquer local da frase.
+SELECT * FROM produtos WHERE estoque BETWEEN 5 and 10;  // Produtos entre 5 e 10.   
+SELECT * FROM produtos WHERE id_fornecedor IN (1, 6);  // Produtos dentro do id_fornecedor com 1 e 6.   
+
