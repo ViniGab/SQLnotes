@@ -57,4 +57,14 @@ SELECT * FROM usuarios WHERE nome LIKE '%lacerda';  // Para procurar nomes que t
 SELECT * FROM usuarios WHERE nome LIKE '%lacerda%';  // Para procurar nomes em qualquer local da frase.
 SELECT * FROM produtos WHERE estoque BETWEEN 5 and 10;  // Produtos entre 5 e 10.   
 SELECT * FROM produtos WHERE id_fornecedor IN (1, 6);  // Produtos dentro do id_fornecedor com 1 e 6.   
+SELECT * FROM produtos ORDER BY estoque ASC;  // Ordenar/mostrar produtos do mais barato ao mais caro, o DESC faz o contrário. 
+SELECT * FROM produtos ORDER BY estoque ASC, minestoque Asc;  // Mesma situação acima, mas com 2. 
+SELECT * FROM produtos WHERE LIMIT 4; // Apenas os 4 primeiros produtos da lista. 
+SELECT * FROM produtos ORDER BY preco DESC LIMIT 4; // Apenas os 4 primeiros produtos mais caros da lista. 
+SELECT * FROM produtos LIMIT 1,3; // Pular um produto da lista e após isto mostrar 3. 
+SELECT COUNTER(*) FROM produtos; // A quantidade de produtos que tem.
+SELECT COUNTER(*) FROM produtos WHERE id_fornecedor = 8; // A quantidade de produtos que tem.
+SELECT AVG(preco) AS media FROM produtos;  // Média dos preços de produtos. 
+SELECT SUM(estoque) as soma; // mostrará a soma de todo o estoque.
+SELECT SUM(estoque) AS estoqueTotal, id_fornecedor FROM produtos GROUP BY id_fornecedor;  // Soma todo estoque e separa por id_fornecedor.
 
