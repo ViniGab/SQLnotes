@@ -67,4 +67,12 @@ SELECT COUNTER(*) FROM produtos WHERE id_fornecedor = 8; // A quantidade de prod
 SELECT AVG(preco) AS media FROM produtos;  // Média dos preços de produtos. 
 SELECT SUM(estoque) as soma; // mostrará a soma de todo o estoque.
 SELECT SUM(estoque) AS estoqueTotal, id_fornecedor FROM produtos GROUP BY id_fornecedor;  // Soma todo estoque e separa por id_fornecedor.
-
+SELECT * FROM produtos;  // Isso é uma query, uma subquery é um comando, dentro de outro comando, exemplo abaixo.
+SELECT *, (SELECT fornecedores.nome From fornecedores WHERE fornecedores.id = produtos.id_fornecedor) AS nome_fornecedor FROM produtos; 
+SELECT produtos.*, FROM produtos INNER JOIN fornecedores ON fornecedores.id = produtos.id_fornecedor; // Usando JOIN ao invés do subQuery.
+INSERT INTO usuarios (nome, datacadastro) VALUES ('Fulano', '2020-12-30');  // Inserindo novos valores na tabela, id não precisa pq é A.I.
+UPDATE usuarios SET nome = 'Pedro da Silva' Where id = 2;  // Para alterações.
+// Sempre que estiver rodando o UPDATE utilizar o WHERE para que todos não sejam alterados.
+UPDATE produtos SET preco = preco * 1.1 WHERE id_fornecedor = 6;  // Mais um exemplo de update para alterações, aumentar 10% dos preços.
+DELETE FROM produtos WHERE id=12 // Para deletar valores(não tem como desfazer, atenção na remoção).
+_______________________________________________________________________________________________________________________________________________
